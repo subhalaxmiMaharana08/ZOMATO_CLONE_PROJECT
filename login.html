@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Zomato Login</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #fff0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login-container {
+      background-color: #fff;
+      padding: 30px;
+      width: 350px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+      border-radius: 12px;
+    }
+
+    .login-container h2 {
+      text-align: center;
+      color: #e23744;
+      margin-bottom: 20px;
+    }
+
+    .login-container input[type="email"],
+    .login-container input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    .login-container button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      background-color: #e23744;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .login-container button:hover {
+      background-color: #c02e3b;
+    }
+
+    .divider {
+      text-align: center;
+      margin: 15px 0;
+      position: relative;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: "";
+      position: absolute;
+      height: 1px;
+      width: 40%;
+      background: #ccc;
+      top: 50%;
+    }
+
+    .divider::before {
+      left: 0;
+    }
+
+    .divider::after {
+      right: 0;
+    }
+
+    .divider span {
+      color: #888;
+      font-size: 14px;
+    }
+
+    .google-btn {
+      background-color: white;
+      color: #333;
+      border: 1px solid #ccc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+    }
+
+    .google-btn img {
+      width: 20px;
+      margin-right: 10px;
+    }
+
+    .signup-link {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .signup-link a {
+      color: #e23744;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Login to Zomato</h2>
+
+    <form onsubmit="return loginUser()">
+      <input type="email" id="email" placeholder="Email" required />
+      <input type="password" id="password" placeholder="Password" required />
+      <button type="submit">Login</button>
+    </form>
+
+    <div class="divider"><span>or</span></div>
+
+    <button class="google-btn" onclick="googleLogin()">
+      <img src="https://img.icons8.com/color/48/000000/google-logo.png" alt="Google Logo">
+      Continue with Google
+    </button>
+
+    <div class="signup-link">
+      New to Zomato? <a href="signup.html">Create an account</a>
+    </div>
+  </div>
+
+  <script>
+    function loginUser() {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      // Dummy authentication for example
+      if (email === "test@zomato.com" && password === "zomato123") {
+        alert("Login successful!");
+        // Redirect or continue
+      } else {
+        alert("Invalid credentials!");
+      }
+
+      return false; // Prevent form from submitting
+    }
+
+    function googleLogin() {
+      alert("Google login coming soon (use Firebase Auth or OAuth in real apps).");
+    }
+  </script>
+</body>
+</html>
